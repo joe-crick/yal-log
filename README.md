@@ -135,9 +135,9 @@ If you want a different log format, you can write your own log provider. A ridic
 | Name        | Type           | Description  |
 | ------------- |:-------------:| -----|
 | yalLog      | function | Initializes yal, and returns a yal instance. *Note*: The actual name is whatever variable name you use to require yal. |
-| messageLevel      | enum      |  Contains the three message level types: ERROR, WARN, and INFO  |
-| defaultLogProvider | function       |    The defaultLogProvider |
-| consoleHandler | function      |  The consoleHandler  |
+| messageLevel      | enum      |  Contains the three message level types: ERROR, WARN, and INFO.  |
+| defaultLogProvider | function       |    The defaultLogProvider. |
+| consoleHandler | function      |  The consoleHandler.  |
 
 
 ####Yal Initialization Options
@@ -146,10 +146,10 @@ When you initialize yal, you provide it with a configuration object. Valid prope
 
 | Name        | Type           | Description  |
 | ------------- |:-------------:| -----|
-| handlers      | array | An array of log handler functions |
-| isGlobal      | boolean      |  Whether yal should attach to window.onerror  |
-| isConsole | boolean      |    Whether yal should attach to the console methods |
-| logProvider | function      |  Override the default log provider  |
+| handlers      | array | An array of log handler functions. |
+| isGlobal      | boolean      |  Whether yal should attach to window.onerror.  |
+| isConsole | boolean      |    Whether yal should attach to the console methods. |
+| logProvider | function      |  Override the default log provider.  |
 
 ## License
 
