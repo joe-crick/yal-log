@@ -134,7 +134,7 @@ If you want a different log format, you can write your own log provider. A ridic
 
 | Name        | Type           | Description  |
 | ------------- |:-------------:| -----|
-| yal      | function | Initializes yal, and returns a yal instance. *Note*: The actual name here is whatever variable name you use to require yal. |
+| yal      | function | Initializes yal, and returns a yal instance. *Note*: The actual name is whatever variable name you use to require yal. |
 | messageLevel      | enum      |  Contains the three message level types: ERROR, WARN, and INFO  |
 | defaultLogProvider | function       |    The defaultLogProvider |
 | consoleHandler | function      |  The consoleHandler  |
