@@ -1,13 +1,13 @@
 'use strict';
 var gulp = require('gulp');
 var excludeGitignore = require('gulp-exclude-gitignore');
-var mocha = require('gulp-mocha');
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
+var jasmine = require('gulp-jasmine');
+var xo = require('gulp-xo');
 var istanbul = require('gulp-istanbul');
 var nsp = require('gulp-nsp');
 var plumber = require('gulp-plumber');
 var babel = require('gulp-babel');
+var reporters = require('jasmine-reporters');
 
 // Initialize the babel transpiler so ES2015 files gets compiled
 // when they're loaded
@@ -19,12 +19,9 @@ var handleErr = function (err) {
 };
 
 gulp.task('static', function () {
-  return gulp.src('**/*.js')
+  return gulp.src('lib/**/*.js')
     .pipe(excludeGitignore())
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'))
-    .pipe(jscs())
+    .pipe(xo())
     .on('error', handleErr);
 });
 
@@ -33,7 +30,7 @@ gulp.task('nsp', function (cb) {
 });
 
 gulp.task('pre-test', function () {
-  return gulp.src('lib/**/*.js')    .pipe(babel())
+  return gulp.src('lib/**/*.js').pipe(babel())
 
     .pipe(istanbul({includeUntested: true}))
     .pipe(istanbul.hookRequire());
@@ -44,7 +41,7 @@ gulp.task('test', ['pre-test'], function (cb) {
 
   gulp.src('test/**/*.js')
     .pipe(plumber())
-    .pipe(mocha({reporter: 'spec'}))
+    .pipe(jasmine({reporter: new reporters.JUnitXmlReporter()}))
     .on('error', function (err) {
       mochaErr = err;
     })

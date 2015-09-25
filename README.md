@@ -151,6 +151,12 @@ When you initialize yal, you provide it with a configuration object. Valid prope
 | isConsole | boolean      |    Whether yal should attach to the console methods. |
 | logProvider | function      |  Override the default log provider.  |
 
+####Dependencies
+Yal is grateful for the assistance of:
+
+ - moment, and
+ - lodash
+
 ## License
 
 MIT © [Joe Crick](http://www.josephcrick.com)

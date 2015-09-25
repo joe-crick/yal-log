@@ -2,30 +2,28 @@
 import assert from 'assert';
 import yalLog from '../lib';
 
-require('steal-jasmine');
-
 var logger = require('pui/utils/logger');
 var can = require('can');
 
 describe('Logger', function () {
 
   var testSetOne, testSetTwo;
-  var mockLogProvider = function(logData, error){
+  var mockLogProvider = function (logData, error) {
     logData.message = 'Mock Provider';
     return logData;
   };
 
-  beforeEach(function(){
+  beforeEach(function () {
     testSetOne = {};
     testSetTwo = {};
   });
 
-  var setOne = function(logData, error){
+  var setOne = function (logData, error) {
     testSetOne.message = logData.message + '; setOne';
     testSetOne.error = error ? error.stack : '';
     testSetOne.level = logData.level;
   };
-  var setTwo = function(logData){
+  var setTwo = function (logData) {
     testSetTwo.message = logData.message + '; setTwo';
     testSetTwo.level = logData.level;
   };

@@ -17,17 +17,19 @@
     "Logging"
   ],
   "devDependencies": {
+    "babel-core": "^5.5.0",
     "gulp": "^3.6.0",
+    "gulp-babel": "^5.1.0",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.9.0",
+    "gulp-jasmine": "^2.1.0",
     "gulp-jscs": "^1.1.0",
     "gulp-jshint": "^1.5.3",
-    "gulp-mocha": "^2.0.0",
-    "gulp-plumber": "^1.0.0",
     "gulp-nsp": "^0.4.5",
-    "jshint-stylish": "^1.0.0",
-    "gulp-babel": "^5.1.0",
-    "babel-core": "^5.5.0"
+    "gulp-plumber": "^1.0.0",
+    "gulp-xo": "^0.4.0",
+    "jasmine-reporters": "^2.0.7",
+    "jshint-stylish": "^1.0.0"
   },
   "dependencies": {
     "moment": "~2.9.0",
@@ -36,6 +38,27 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
+  },
+  "xo": {
+    "envs": [
+      "browser",
+      "jasmine",
+      "jquery",
+      "phantomjs",
+      "commonjs"
+    ],
+    "space": 4,
+    "rules": {
+      "one-var": [
+        0,
+        "never"
+      ],
+      "quote-props": [
+        0,
+        "consistent"
+      ],
+      "no-nested-ternary": 0
+    }
   },
   "license": "MIT"
 }
