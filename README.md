@@ -93,6 +93,23 @@ Yal's default `log provider` creates a log entry in the following format:
 
 > date: 2015-09-23T20:10:12+00:00 | level: WARN | host: site.com | message: Oops | stack_trace: {*trace if there is one*}
 
+The default `log provider` is able to generate a stack trace if you provide the log entry with an error object. To get an accurate stack trace, you must create an error object in the function where you are logging the issue. Below is an example:
+
+```js
+// yal has already been initialized, as
+// var log = yal({handlers: [myHandler]});
+function logMyError(){
+   // Try to connect to my API
+   myModel.save().then(function(){
+     // My Update Worked. Yay!!!
+   }).fail(function(err){
+	 // Something went wrong, let's log this. We want a stack trace, so create
+	 // a new error object, and pass it into yal.
+	 log.log(err.json, new Error());
+   });
+}
+```
+
 If you want a different log format, you can write your own log provider. A ridiculously simple example of that is below:
 
 ```js
