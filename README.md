@@ -5,7 +5,7 @@
 
 Yal is a logger that gives you a lot of control over how logging happens. Basically, yal is a structure  you can plug logging tasks into, and it will run those tasks in the order it receives them.
 
-Getting yal up and running is fairly trivial. After including yal in your application, you initialize it. Yal will return an object with a log method, and several convenience methods ([see below for details](#API)). Yal, itself, also has a few useful properties.
+Getting yal up and running is fairly trivial. After including yal in your application, you initialize it. Yal will return an object with a log method, and several convenience methods. Yal, itself, also has a few useful properties ([see below for details](#API)).
 
 ```js
 var yal = require('yal-log');
@@ -16,7 +16,7 @@ var log = yal({handlers: [handlerOne, handlerTwo]});
     log.log({message: 'Oops', title: 'Warn', level: logger.messageLevel.WARN});
 ```
 
-Yal also has a few convenience methods, which essentially append a messageLevel to your log message:
+Yal's convenience methods append a messageLevel to your log message, saving you a few keystrokes:
 
  - .error
  - .warn
@@ -35,7 +35,7 @@ A `logging provider` takes an input and produces a log entry. A `log handler` re
 
  - Writing the content to a server or database log using an API
  - Presenting a modal to the end user
- - Sending an alert
+ - Sending an alert to DevOps
 
 Yal provides a default `logging provider`, but you can write your own. Yal has one default `log handler`, the `consoleHandler`, which writes log entries to the browser console. Yal also provides a few built-in convenience features:
 
