@@ -2,11 +2,6 @@
 import assert from 'assert';
 import yalLog from '../lib';
 
-/*global describe */
-/*global it */
-/*global expect */
-/*global beforeEach */
-
 require('steal-jasmine');
 
 var logger = require('pui/utils/logger');
