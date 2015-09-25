@@ -8,12 +8,12 @@ Yal is a logger that gives you a lot of control over how logging happens. Basica
 Getting yal up and running is fairly trivial. After including yal in your application, you initialize it. Yal will return an object with a log method, and several convenience methods. Yal, itself, also has a few useful properties ([see below for details](#API)).
 
 ```js
-var yal = require('yal-log');
+var yalLog = require('yal-log');
 
 // Initialize yal
-var log = yal({handlers: [handlerOne, handlerTwo]});
+var yal = yalLog({handlers: [handlerOne, handlerTwo]});
 	// Yal returns a log object instance. Call the log method to run the logger.
-    log.log({message: 'Oops', title: 'Warn', level: logger.messageLevel.WARN});
+    yal.log({message: 'Oops', title: 'Warn', level: logger.messageLevel.WARN});
 ```
 
 Yal's convenience methods append a messageLevel to your log message, saving you a few keystrokes:
@@ -66,7 +66,7 @@ $ npm install --save yal-log
 ####Basic Usage
 
 ```js
-var yal = require('yal-log');
+var yalLog = require('yal-log');
 
   // Sample log handler
   var handlerOne = function(logData, error){
@@ -82,9 +82,9 @@ var yal = require('yal-log');
   };
 
 // Initialize yal with the log handlers
-var log = yal({handlers: [handlerOne, handlerTwo]});
+var yal = yalLog({handlers: [handlerOne, handlerTwo]});
 	// Yal returns a log object instance. Call the log method to run the logger.
-    log.log({message: 'Oops', title: 'Warn', level: logger.messageLevel.WARN});
+    yal.log({message: 'Oops', title: 'Warn', level: logger.messageLevel.WARN});
 ```
 
 ####Using yal with a Custom Log Provider
@@ -97,7 +97,7 @@ The default `log provider` is able to generate a stack trace if you provide the 
 
 ```js
 // yal has already been initialized, as
-// var log = yal({handlers: [myHandler]});
+// var yal = yalLog({handlers: [myHandler]});
 function logMyError(){
    // Try to connect to my API
    myModel.save().then(function(){
@@ -105,7 +105,7 @@ function logMyError(){
    }).fail(function(err){
 	 // Something went wrong, let's log this. We want a stack trace, so create
 	 // a new error object, and pass it into yal.
-	 log.log(err.json, new Error());
+	 yal.log(err.json, new Error());
    });
 }
 ```
@@ -119,13 +119,13 @@ If you want a different log format, you can write your own log provider. A ridic
     return logData;
   };
 
-  var log = logger({handlers: [setTwo], loggingProvider: mockLogProvider});
+  var yal = yalLog({handlers: [setTwo], loggingProvider: mockLogProvider});
 ```
 
 ####Using yal with the isGlobal and isConsole Options
 
 ```js
- var log = logger({handlers: [setTwo], isGlobal: true, isConsole: true});
+ var yal = yalLog({handlers: [setTwo], isGlobal: true, isConsole: true});
 ```
 
 ##API <a name="API"></a>
