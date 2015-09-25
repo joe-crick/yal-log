@@ -5,7 +5,7 @@
 
 Yal is a logger that gives you a lot of control over how logging happens. Basically, yal is a structure  you can plug logging tasks into, and it will run those tasks in the order it receives them.
 
-Getting yal up and running is fairly trivial. After including yal in your application, you initialize it. Yal will return an object with a log method, and several convenience methods (see below for details). Yal, itself, also has a few useful properties.
+Getting yal up and running is fairly trivial. After including yal in your application, you initialize it. Yal will return an object with a log method, and several convenience methods ([see below for details](#API)). Yal, itself, also has a few useful properties.
 
 ```js
 var yal = require('yal-log');
@@ -111,7 +111,7 @@ If you want a different log format, you can write your own log provider. A ridic
  var log = logger({handlers: [setTwo], isGlobal: true, isConsole: true});
 ```
 
-##API
+##API <a name="API"></a>
 
 ####Yal Methods and Properties
 
