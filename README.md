@@ -91,7 +91,7 @@ var yal = yalLog({handlers: [handlerOne, handlerTwo]});
 
 Yal's default `log provider` creates a log entry in the following format:
 
-> date: 2015-09-23T20:10:12+00:00 | level: WARN | host: site.com | message: Oops | stack_trace: {*trace if there is one*}
+> date: 2015-09-23T20:10:12+00:00 | level: WARN | message: Oops | stack_trace: {*trace if there is one*}
 
 The default `log provider` is able to generate a stack trace if you provide the log entry with an instance of Error. To get an accurate stack trace, you must create the Error instance in the function where you are logging the issue. Below is an example:
 
