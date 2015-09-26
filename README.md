@@ -1,7 +1,7 @@
 # yal-log [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Yet Another Logger
 
-##Overview
+## Overview
 
 Yal is a logger that gives you a lot of control over how logging happens. Basically, yal is a structure  you can plug logging tasks into, and it will run those tasks in the order it receives them.
 
@@ -63,7 +63,7 @@ $ npm install --save yal-log
 
 ## Usage
 
-####Basic Usage
+#### Basic Usage
 
 ```js
 var yalLog = require('yal-log');
@@ -87,7 +87,7 @@ var yal = yalLog({handlers: [handlerOne, handlerTwo]});
     yal.log({message: 'Oops', title: 'Warn', level: logger.messageLevel.WARN});
 ```
 
-####Using yal with a Custom Log Provider
+#### Using yal with a Custom Log Provider
 
 Yal's default `log provider` creates a log entry in the following format:
 
@@ -122,15 +122,15 @@ If you want a different log format, you can write your own log provider. A ridic
   var yal = yalLog({handlers: [setTwo], loggingProvider: mockLogProvider});
 ```
 
-####Using yal with the isGlobal and isConsole Options
+#### Using yal with the isGlobal and isConsole Options
 
 ```js
  var yal = yalLog({handlers: [setTwo], isGlobal: true, isConsole: true});
 ```
 
-##API <a name="API"></a>
+## API <a name="API"></a>
 
-####Yal Methods and Properties
+#### Yal Methods and Properties
 
 | Name        | Type           | Description  |
 | ------------- |:-------------:| -----|
@@ -140,7 +140,7 @@ If you want a different log format, you can write your own log provider. A ridic
 | consoleHandler | function      |  The consoleHandler.  |
 
 
-####Yal Initialization Options
+#### Yal Initialization Options
 
 When you initialize yal, you provide it with a configuration object. Valid properties of that configuration object are as follows:
 
@@ -151,7 +151,7 @@ When you initialize yal, you provide it with a configuration object. Valid prope
 | isConsole | boolean      |    Whether yal should attach to the console methods. |
 | logProvider | function      |  Override the default log provider.  |
 
-####Dependencies
+#### Dependencies
 Yal is grateful for the assistance of:
 
  - moment, and
