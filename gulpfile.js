@@ -31,24 +31,16 @@ gulp.task('nsp', function (cb) {
 
 gulp.task('pre-test', function () {
     return gulp.src('lib/**/*.js').pipe(babel())
-
         .pipe(istanbul({includeUntested: true}))
         .pipe(istanbul.hookRequire());
 });
 
 gulp.task('test', ['pre-test'], function (cb) {
-    var mochaErr;
 
-    gulp.src('test/**/*.js')
-        .pipe(plumber())
-        .pipe(jasmine({reporter: new reporters.JUnitXmlReporter()}))
-        .on('error', function (err) {
-            mochaErr = err;
-        })
-        .pipe(istanbul.writeReports())
-        .on('end', function () {
-            cb(mochaErr);
-        });
+    gulp.src('test/index.js')
+        .pipe(jasmine())
+        .pipe(istanbul.writeReports());
+
 });
 
 gulp.task('babel', function () {
