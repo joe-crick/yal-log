@@ -1,6 +1,7 @@
 # yal-log [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/joe-crick/yal-log.svg)](https://greenkeeper.io/)
+
 > Yet Another Logger
 
 ## Overview
