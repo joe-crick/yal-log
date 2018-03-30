@@ -40,7 +40,7 @@
     "phantomjs": "^2.1.7"
   },
   "dependencies": {
-    "moment": "~2.21.0",
+    "moment": "~2.22.0",
     "lodash": "~4.17.4"
   },
   "scripts": {
