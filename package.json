@@ -24,7 +24,7 @@
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^1.1.1",
     "gulp-jasmine": "^2.1.0",
-    "gulp-jasmine-browser": "^1.7.1",
+    "gulp-jasmine-browser": "^3.0.2",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
     "gulp-nsp": "^2.4.2",
