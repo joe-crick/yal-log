@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "moment": "~2.21.0",
-    "lodash": "~4.17.4"
+    "lodash": "4.17.5"
   },
   "scripts": {
     "prepublish": "gulp prepublish",
