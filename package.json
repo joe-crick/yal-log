@@ -23,7 +23,7 @@
     "gulp-browserify": "^0.5.1",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^1.1.1",
-    "gulp-jasmine-browser": "^3.0.2",
+    "gulp-jasmine-browser": "^4.0.0",
     "gulp-jasmine": "^4.0.0",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
