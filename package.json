@@ -36,7 +36,7 @@
     "jshint-stylish": "^2.2.1",
     "karma": "^2.0.2",
     "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.1.0",
+    "karma-jasmine": "^2.0.0",
     "phantomjs": "^2.1.7"
   },
   "dependencies": {
